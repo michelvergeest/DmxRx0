@@ -4,17 +4,18 @@
 
 #include <DmxRx.h>
 
-extern "C" { 
-	void SIG_USART0_RECV (void) __attribute__((__always_inline__));
+extern "C" {
+    void SIG_USART0_RECV (void) __attribute__((__always_inline__));
 }
 
 
-class DmxRx0 : public DmxRx {
-	
-	friend void SIG_USART0_RECV (void);
-   		
-	public:
-		void	begin();
+class DmxRx0 : public DmxRx
+{
+
+    friend void SIG_USART0_RECV (void);
+
+public:
+    void    begin();
 };
 
 extern DmxRx0 Dmx0Receiver;
